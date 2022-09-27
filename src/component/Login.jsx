@@ -13,31 +13,29 @@ function Login() {
             alert("Login error!");
             return;
         }
-
     }
     return (
         <div className="container">
-            <div className="form-box">
+            {!open && <div className="form-box">
                 <div className="header-form">
-                    <h4 className="text-primary text-center"><i className="fa fa-user-circle" style={{ fontSize: "110px" }}></i></h4>
-                    <div className="image">
-                    </div>
+                    <h4 className="text-primary text-center">LOGIN</h4>
+
                 </div>
                 <div className="body-form">
                     <form>
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
-                                <span className="input-group-text"><i class="fa fa-user"></i></span>
+                                <span className="input-group-text"><label>Username</label></span>
                             </div>
-                            <input type="text" className="form-control" placeholder="Username" />
+                            <input type="text" className="form-control" placeholder="Username" onChange={e => setUsername(e.target.value)} />
                         </div>
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
-                                <span className="input-group-text"><i class="fa fa-lock"></i></span>
+                                <span className="input-group-text"><label>Password</label></span>
                             </div>
-                            <input type="text" className="form-control" placeholder="Password" />
+                            <input type="password" className="form-control" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                         </div>
-                        <button type="button" className="btn btn-secondary btn-block">LOGIN</button>
+                        <button type="button" className="btn btn-secondary btn-block" onClick={handleLogin}>LOGIN</button>
                         <div className="message">
                             <div><input type="checkbox" /> Remember ME</div>
                             <div><a href="#">Forgot your password</a></div>
@@ -49,7 +47,8 @@ function Login() {
                         <a href="#"><i className="fab fa-google"></i></a>
                     </div>
                 </div>
-            </div>
+            </div>}
+            {open && <Home />}
         </div>
     )
 }

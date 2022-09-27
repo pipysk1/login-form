@@ -28,6 +28,8 @@ body {
 
 .header-form {
     margin-bottom: 15px;
+    text-align: center;
+    font-size: 24px;
 }
 
 button {
@@ -53,4 +55,25 @@ button {
 .social i:hover {
     color: red;
     cursor: pointer;
+}
+
+.form-control {
+    height: 30px;
+    line-height: 21px;
+    width: 100%;
+    border: 2px;
+    font-size: 16px;
+}
+
+.input-group-text {
+    font-size: 18px;
+    padding: 4px;
+}
+
+.btn {
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    margin: 12px auto;
+    display: block;
 }
